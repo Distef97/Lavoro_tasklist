@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Taskchains</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <style>
+        .status-COMPLETED { color: green; font-weight: bold; }
+        .status-FAILED { color: red; font-weight: bold; }
+        .status-RUNNING { color: orange; font-weight: bold; }
+        .status-UNKNOWN { color: gray; font-weight: bold; }
+        .task-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .task-info {
+            flex: 1;
+            min-width: 200px;
+        }
+        .task-actions {
+            margin-top: 10px;
+        }
+        .flash-messages {
+            margin-bottom: 20px;
+        }
+        .flash {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .flash.info { background-color: #d1ecf1; color: #0c5460; }
+        .flash.success { background-color: #d4edda; color: #155724; }
+        .flash.error { background-color: #f8d7da; color: #721c24; }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gestione Taskchains</h1>
+        <form action="{{ url_for('update_status') }}" method="POST" style="display:inline;">
+            <button type="submit">🔄 Aggiorna Status</button>
+        </form>
+    </header>
+
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="flash-messages">
+              {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <h2>Lista Tasks</h2>
+        {% if tasks %}
+            {% for task in tasks %}
+                <div class="task-card">
+                    <div class="task-info">
+                        <strong>{{ task.technicalName }}</strong><br>
+                        Status: <span class="status-{{ task.status | default('UNKNOWN') }}">{{ task.status | default('Sconosciuto') }}</span>
+                    </div>
+                    <div class="task-actions">
+                        <form action="{{ url_for('run_task') }}" method="POST" style="margin: 0;">
+                            <input type="hidden" name="task_name" value="{{ task.technicalName }}">
+                            <button type="submit">▶️ Lancia</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Nessuna task trovata nel file Try.json.</p>
+        {% endif %}
+    </main>
+</body>
+</html>
