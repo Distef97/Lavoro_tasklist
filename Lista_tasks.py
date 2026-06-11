@@ -13,7 +13,7 @@ def list_tasks ():
 
     subprocess.run(command, shell=True) # Execute the login command
 
-    command = ['datasphere', 'objects','task-chains', 'list', '--space', 'OUTBOUND', '--top', '59', ' --output ', 'C:/Users/simonedistefano/OneDrive - KPMG/Documents/SAP Datasphere/Datasphere CLI/Try.json']
+    command = ['datasphere', 'objects','task-chains', 'list', '--space', 'OUTBOUND', '--top', '100', ' --output ', 'C:/Users/simonedistefano/OneDrive - KPMG/Documents/SAP Datasphere/Datasphere CLI/Try.json']
 
     result=subprocess.run(command, capture_output=True,text=True, shell=True) # Execute the login command
     result=result.stdout
