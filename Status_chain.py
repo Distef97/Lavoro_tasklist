@@ -3,7 +3,7 @@ import json
 SPACE_ID = "OUTBOUND"
 
 # 1. Apri il file JSON in modalità lettura ('r')
-with open("C:/Users/simonedistefano/OneDrive - KPMG/Documents/SAP Datasphere/Datasphere CLI/Try.json", "r", encoding="utf-8") as file:
+with open("Try.json", "r", encoding="utf-8") as file:
 
     # 2. Usa json.load() per caricare il contenuto nella variabile
     dati = json.load(file)
@@ -21,11 +21,11 @@ with open("C:/Users/simonedistefano/OneDrive - KPMG/Documents/SAP Datasphere/Dat
 
 #     subprocess.run(command, shell=True) # Execute the login command
 
-#     command = ['datasphere', 'objects','task-chains', 'read', '--space', 'OUTBOUND',  ' --output ', 'C:/Users/simonedistefano/OneDrive - KPMG/Documents/SAP Datasphere/Datasphere CLI/Try.json']
+#     command = ['datasphere', 'objects','task-chains', 'read', '--space', 'OUTBOUND',  ' --output ', 'Try.json']
 
 #     result=subprocess.run(command, capture_output=True,text=True, shell=True) # Execute the login command
 #     result=result.stdout
-#     with open("C:/Users/simonedistefano/OneDrive - KPMG/Documents/SAP Datasphere/Datasphere CLI/Try.json", "w", encoding="utf-8") as file:
+#     with open("Try.json", "w", encoding="utf-8") as file:
 #         file.write(result)
 contatore = 0
 
@@ -49,7 +49,7 @@ for tc in dati[0:len(dati)]:
     if len(logs) != 0:
         dati[contatore]['status'] = logs[0]['status']
     
-        with open("C:/Users/simonedistefano/OneDrive - KPMG/Documents/SAP Datasphere/Datasphere CLI/Try.json", "w", encoding="utf-8") as file:
+        with open("Try.json", "w", encoding="utf-8") as file:
             # 2. Usa json.load() per caricare il contenuto nella variabile
             json.dump(dati, file, indent=4, ensure_ascii=False)
     contatore += 1
