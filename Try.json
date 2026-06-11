@@ -1,0 +1,236 @@
+[
+    {
+        "technicalName": "TC_8_parallels",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_DSJ_LTR1_01_001_BP_EF_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_AS_ED_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_AS_EF_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_BP_CD_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_BP_CD_GP_Collection",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_BP_CD_GP_ECC",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_BP_CF_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_BUAGR_ATTR_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_BUAGR_ATTR_GP_CRM",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_BUT020_ATTR_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_CL_CD_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_CL_CF_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_CO_CD_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_CO_CD_HI_SAPSCRIPT_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_CO_CD_PR_COND_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_CO_CF_2_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_CO_CF_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_CO_EF_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_CTCCQTST_X_CNTR_SUBITEMS_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_CTCEGLPE_X_FC",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_FC_CD_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_FC_CF_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_FP_CD_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_FP_CF_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_GL_ED_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_GL_EF_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_IN_CD_GP",
+        "status": "RUNNING"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_IV_CD_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_IV_CF_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_IV_ED_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_IV_EF_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_LAE_CRM_CONDS_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_MV_CD_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_MV_CF_GP"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_MV_PRDB_ATTR_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_MV_PRZI51_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_PU_ED_2_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_PU_ED_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_PU_ED_GP_CRM",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_PU_EF_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_QT_CD_2_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_QT_CD_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_QT_CD_GP_Collection",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_QT_CF_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_QT_ED_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_RM_CD_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_RS_CD_GP"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_RS_CF_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_RT_CD_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_SR_CD_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_SR_CF_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_TA_CD_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_TA_CF_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_UC_CF_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_01_001_ZITB_ZITRAA_ASSETMASTR_CD_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_CTCCINST_X_INSSERV_ATTR_GP",
+        "status": "COMPLETED"
+    },
+    {
+        "technicalName": "TC_LTR1_LTR2_90_001_BILLPLAN_GP",
+        "status": "FAILED"
+    },
+    {
+        "technicalName": "TC_LTR1_PRICE_LIST_AUTO_DK_GP",
+        "status": "COMPLETED"
+    }
+]
