@@ -43,6 +43,16 @@ def update_status():
     flash('Aggiornamento status avviato in background.', 'info')
     return redirect(url_for('index'))
 
+@app.route('/update_single_status', methods=['POST'])
+def update_single_status():
+    task_name = request.form.get('task_name')
+    if task_name:
+        subprocess.Popen(['python', 'update_single_status.py', task_name])
+        flash(f'Aggiornamento status per {task_name} avviato in background.', 'info')
+    else:
+        flash('Nessun task selezionato.', 'error')
+    return redirect(url_for('index'))
+
 @app.route('/run_task', methods=['POST'])
 def run_task():
     task_name = request.form.get('task_name')

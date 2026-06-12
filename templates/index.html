@@ -26,6 +26,8 @@
         }
         .task-actions {
             margin-top: 10px;
+            display: flex;
+            gap: 10px;
         }
         .flash-messages {
             margin-bottom: 20px;
@@ -86,6 +88,10 @@
                         Status: <span class="status-{{ task.status | default('UNKNOWN') }}">{{ task.status | default('Sconosciuto') }}</span>
                     </div>
                     <div class="task-actions">
+                        <form action="{{ url_for('update_single_status') }}" method="POST" style="margin: 0;">
+                            <input type="hidden" name="task_name" value="{{ task.technicalName }}">
+                            <button type="submit">🔄 Aggiorna</button>
+                        </form>
                         <form action="{{ url_for('run_task') }}" method="POST" style="margin: 0;">
                             <input type="hidden" name="task_name" value="{{ task.technicalName }}">
                             <button type="submit">▶️ Lancia</button>
