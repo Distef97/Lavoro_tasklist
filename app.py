@@ -38,23 +38,29 @@ def index():
 
 @app.route('/update_status', methods=['POST'])
 def update_status():
+    search_query = request.form.get('search', '')
+    status_filter = request.form.get('status', 'ALL')
     # Run the status update script
     subprocess.Popen(['python', 'Status_chain.py'])
     flash('Aggiornamento status avviato in background.', 'info')
-    return redirect(url_for('index'))
+    return redirect(url_for('index', search=search_query, status=status_filter))
 
 @app.route('/update_single_status', methods=['POST'])
 def update_single_status():
+    search_query = request.form.get('search', '')
+    status_filter = request.form.get('status', 'ALL')
     task_name = request.form.get('task_name')
     if task_name:
         subprocess.Popen(['python', 'update_single_status.py', task_name])
         flash(f'Aggiornamento status per {task_name} avviato in background.', 'info')
     else:
         flash('Nessun task selezionato.', 'error')
-    return redirect(url_for('index'))
+    return redirect(url_for('index', search=search_query, status=status_filter))
 
 @app.route('/run_task', methods=['POST'])
 def run_task():
+    search_query = request.form.get('search', '')
+    status_filter = request.form.get('status', 'ALL')
     task_name = request.form.get('task_name')
     if task_name:
         # Run the taskchain script with the task_name as argument
@@ -62,7 +68,7 @@ def run_task():
         flash(f'Task {task_name} avviata in background.', 'success')
     else:
         flash('Nessun task selezionato.', 'error')
-    return redirect(url_for('index'))
+    return redirect(url_for('index', search=search_query, status=status_filter))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

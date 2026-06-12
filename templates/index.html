@@ -50,6 +50,8 @@
     <header>
         <h1>Gestione Taskchains</h1>
         <form action="{{ url_for('update_status') }}" method="POST" style="display:inline;">
+            <input type="hidden" name="search" value="{{ search_query }}">
+            <input type="hidden" name="status" value="{{ status_filter }}">
             <button type="submit">🔄 Aggiorna Status</button>
         </form>
     </header>
@@ -90,10 +92,14 @@
                     <div class="task-actions">
                         <form action="{{ url_for('update_single_status') }}" method="POST" style="margin: 0;">
                             <input type="hidden" name="task_name" value="{{ task.technicalName }}">
+                            <input type="hidden" name="search" value="{{ search_query }}">
+                            <input type="hidden" name="status" value="{{ status_filter }}">
                             <button type="submit">🔄 Aggiorna</button>
                         </form>
                         <form action="{{ url_for('run_task') }}" method="POST" style="margin: 0;">
                             <input type="hidden" name="task_name" value="{{ task.technicalName }}">
+                            <input type="hidden" name="search" value="{{ search_query }}">
+                            <input type="hidden" name="status" value="{{ status_filter }}">
                             <button type="submit">▶️ Lancia</button>
                         </form>
                     </div>
