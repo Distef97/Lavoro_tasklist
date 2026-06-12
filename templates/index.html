@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestione Taskchains</title>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let wasUpdating = {{ 'true' if is_updating else 'false' }};
+
+            setInterval(() => {
+                fetch('/is_updating')
+                    .then(response => response.json())
+                    .then(data => {
+                        const isUpdating = data.is_updating;
+                        if (wasUpdating && !isUpdating) {
+                            // A process just finished, reload the page to show updated statuses
+                            location.reload();
+                        }
+                        wasUpdating = isUpdating;
+                    })
+                    .catch(err => console.error("Error polling update status:", err));
+            }, 2000); // Check every 2 seconds
+        });
+    </script>
     <style>
         .status-COMPLETED { color: green; font-weight: bold; }
         .status-FAILED { color: red; font-weight: bold; }
