@@ -109,7 +109,7 @@
     },
     {
         "technicalName": "TC_LTR1_01_001_IN_CD_GP",
-        "status": "RUNNING"
+        "status": "COMPLETED"
     },
     {
         "technicalName": "TC_LTR1_01_001_IV_CD_GP",
@@ -231,6 +231,6 @@
     },
     {
         "technicalName": "TC_LTR1_PRICE_LIST_AUTO_DK_GP",
-        "status": "COMPLETED"
+        "status": "FAILED"
     }
 ]

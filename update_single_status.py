@@ -34,7 +34,7 @@ dsp_secret = os.environ.get('DSP_SECRET')
 
 if dsp_clientid and dsp_secret:
     command = ['datasphere', 'login', '--', 'host', dsp_host, '--', 'client-id', dsp_clientid, '--', 'client-secret', dsp_secret]
-    subprocess.run(command, shell=False)
+    subprocess.run(command, shell=True)
 else:
     print("Warning: DSP_CLIENTID or DSP_SECRET environment variables not set. Authentication may fail.")
 
@@ -43,7 +43,7 @@ for i, tc in enumerate(dati):
         print(f"Updating status for {target_task_name}")
 
         log_list_cmd = ['datasphere', 'tasks', 'logs', 'list', '--space', SPACE_ID, '--objectname', target_task_name]
-        log_result = subprocess.run(log_list_cmd, input=f"{target_task_name}", capture_output=True, text=True, shell=False)
+        log_result = subprocess.run(log_list_cmd, input=f"{target_task_name}", capture_output=True, text=True, shell=True)
 
         try:
             logs = json.loads(log_result.stdout)
