@@ -20,7 +20,21 @@ def get_tasks():
 @app.route('/')
 def index():
     tasks = get_tasks()
-    return render_template('index.html', tasks=tasks)
+
+    search_query = request.args.get('search', '').lower()
+    status_filter = request.args.get('status', 'ALL')
+
+    filtered_tasks = []
+    for task in tasks:
+        match_search = search_query in task.get('technicalName', '').lower()
+        match_status = status_filter == 'ALL' or status_filter == task.get('status', '').upper()
+
+        if match_search and match_status:
+            filtered_tasks.append(task)
+
+    total_tasks = len(filtered_tasks)
+
+    return render_template('index.html', tasks=filtered_tasks, search_query=request.args.get('search', ''), status_filter=status_filter, total_tasks=total_tasks)
 
 @app.route('/update_status', methods=['POST'])
 def update_status():
