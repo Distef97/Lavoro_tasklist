@@ -63,7 +63,21 @@
           {% endif %}
         {% endwith %}
 
-        <h2>Lista Tasks</h2>
+        <form method="GET" action="{{ url_for('index') }}" style="margin-bottom: 20px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <input type="text" name="search" placeholder="Cerca per nome..." value="{{ search_query }}">
+
+            <select name="status">
+                <option value="ALL" {% if status_filter == 'ALL' %}selected{% endif %}>Tutti</option>
+                <option value="COMPLETED" {% if status_filter == 'COMPLETED' %}selected{% endif %}>Completed</option>
+                <option value="FAILED" {% if status_filter == 'FAILED' %}selected{% endif %}>Failed</option>
+                <option value="RUNNING" {% if status_filter == 'RUNNING' %}selected{% endif %}>Running</option>
+            </select>
+
+            <button type="submit">Filtra</button>
+            <a href="{{ url_for('index') }}" style="text-decoration: none;"><button type="button">Reset</button></a>
+        </form>
+
+        <h2>Lista Tasks (Totale: {{ total_tasks }})</h2>
         {% if tasks %}
             {% for task in tasks %}
                 <div class="task-card">
